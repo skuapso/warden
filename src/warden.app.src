@@ -1,0 +1,24 @@
+{application, warden,
+ [
+  {description, "warden hooks"},
+  {vsn, git},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  logger,
+                  hooks
+                 ]},
+  {mod, { warden, []}},
+  {env, [
+      {host, "localhost"},
+      {port, 5432},
+      {user, "warden"},
+      {database, "warden"},
+      {password, ""},
+      {max_connections, 20},
+      {weight, 3},
+      {pre_commands, []},
+      {pre_query, []}
+  ]}
+ ]}.
